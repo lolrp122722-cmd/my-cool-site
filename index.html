@@ -3,32 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт моего Бро</title>
+    <title>For My Girl 💜</title>
     <style>
-        body {
-            background-color: #121212;
-            color: #00ff66;
-            font-family: monospace;
-            text-align: center;
-            padding-top: 50px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 { font-size: 2em; text-shadow: 0 0 10px #00ff66; }
-        p { color: #ffffff; font-size: 1.2em; }
+
+        body {
+            background: #0d0714;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Неоновые фоновые шары */
+        .glow-1, .glow-2 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: 1;
+        }
+
+        .glow-1 {
+            background: #8a2be2;
+            top: -50px;
+            left: -50px;
+        }
+
+        .glow-2 {
+            background: #ff007f;
+            bottom: -50px;
+            right: -50px;
+        }
+
+        /* Главная карточка */
+        .card {
+            background: rgba(23, 11, 38, 0.7);
+            border: 1px solid rgba(186, 85, 211, 0.3);
+            backdrop-filter: blur(15px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 350px;
+            width: 90%;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.3);
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            color: #e0b0ff;
+            text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #d8b4fe;
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* Неоновая фиолетовая кнопка */
         .btn {
-            background: #00ff66;
-            color: #000;
-            padding: 15px 25px;
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #8a2be2, #da70d6);
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 20px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 25px rgba(218, 112, 214, 0.9);
+        }
+
+        .heart {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
-    <h1>ВИТАЮ НА СЕРВЕРЕ, БЛЯТЬ!</h1>
-    <p>Мой личный сайт, сработавший без всяких лагающих туннелей!</p>
-    <a href="#" class="btn" onclick="alert('Ебать ты красава, бро!')">Жми сюда</a>
+
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <div class="card">
+        <div class="heart">💜</div>
+        <h1>Специально для тебя</h1>
+        <p>Этот сайт задеплоен прямо с мобилы. Фиолетовый вайб для самой лучшей девочки!</p>
+        <button class="btn" onclick="surprise()">Нажми сюда ✨</button>
+    </div>
+
+    <script>
+        function surprise() {
+            alert('Ты самая лучшая! 💜✨');
+        }
+    </script>
+
 </body>
 </html>
